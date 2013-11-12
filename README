@@ -1,0 +1,20 @@
+Installation
+=========
+- Install the python api for dropbox by following the instructions here:
+
+https://www.dropbox.com/developers/core/sdks/python
+
+- Get an API Key and Secret from the following URL:
+
+https://www.dropbox.com/developers/apps
+
+- Run the backup utility once to authenticate your app with your user with the following command:
+
+python backup_and_upload.py -d db_name_1,db_name_2 -u mysql_username -p mysql_password -k dropbox_app_key -s dropbox_app_secret
+
+*Consult the help instructions by running python backup_and_upload.py --help*
+
+License
+----
+MIT
+
