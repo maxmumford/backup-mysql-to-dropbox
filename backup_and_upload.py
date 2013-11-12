@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import os
 import datetime
 import time
@@ -12,7 +13,10 @@ parser.add_option("-p", "--password", dest="password", help="MySQL password", de
 parser.add_option("-k", "--app-key", dest="app_key", help="Dropbox App Key")
 parser.add_option("-s", "--app-secret", dest="app_secret", help="Dropbox app secret")
 (options, args) = parser.parse_args()
-options.databases = list(set([db for db in options.databases.split(',')]))
+
+# process options
+assert options.databases, 'You must specify a comma separated list of databases'
+options.databases = ',' in options.databases and list(set([db for db in options.databases.split(',')])) or [options.databases]
 
 # mysql backup function
 def backup_mysql_database(username, password, databases_to_backup):
