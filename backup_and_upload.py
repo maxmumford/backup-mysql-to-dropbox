@@ -29,7 +29,7 @@ def backup_mysql_database(username, password, databases_to_backup):
         backup_date = time.strftime('%Y%m%d%H%M%S')
 
         # takes backup in the same location as script
-        cmd_backup = "mysqldump -u{0} {1} {2} > {2}_{3}.sql".format(username, password and '-p%s' % passsword or '', database, backup_date)
+        cmd_backup = "mysqldump -u{0} {1} {2} > {2}_{3}.sql".format(username, password and '-p%s' % password or '', database, backup_date)
 
         # zips the backup just taken
         cmd_zip = "zip {0}_{1}.zip {0}_{1}.sql".format(database, backup_date)
