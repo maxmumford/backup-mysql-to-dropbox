@@ -26,6 +26,7 @@ def backup_mysql_database(username, password, databases_to_backup):
     backup_names = []
 
     for database in databases_to_backup:
+        database.strip()
         backup_date = time.strftime('%Y%m%d%H%M%S')
 
         # takes backup in the same location as script
