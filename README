@@ -1,3 +1,9 @@
+Introduction
+========
+This is a python script that will let you backup a MySQL database, zip it, then upload it to your drop box. It can also auto-delete backups older than X days. It can be used in conjunction with a cron job on linux.
+
+So far only tested on ubuntu but should work on all linux distros.
+
 Setup
 =========
 - Install the python api for dropbox by following the instructions here:
