@@ -26,6 +26,7 @@ python backup_and_upload.py -d db_name_1,db_name_2 -u mysql_username -p mysql_pa
 - To automatically delete backups older than X days, use the -x argument
 
 *The above crontab line will run the script once a day. Refer to the crontab documentation to change the interval*
+
 *Show help messages for backup_and_upload.py by running backup_and_reload.py --help*
 
 License
