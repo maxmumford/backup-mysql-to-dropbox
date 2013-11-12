@@ -54,12 +54,13 @@ class DropboxTerm(cmd.Cmd):
     def do_ls(self):
         """list files in current remote directory"""
         resp = self.api_client.metadata(self.current_path)
-
+        files = []
         if 'contents' in resp:
             for f in resp['contents']:
                 name = os.path.basename(f['path'])
-                encoding = locale.getdefaultlocale()[1]
-                self.stdout.write(('%s\n' % name).encode(encoding))
+                files.append(name)
+        return files
+                
 
     @command()
     def do_cd(self, path):
